@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Local secrets and machine state
+.env
+.env.*
+*.log
+*.tmp
+*.bak
+
+# SQLite runtime side files
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Frontend dependency folders, if added later
+node_modules/
+dist/
+build/
+
+# Old archives and local packaging outputs
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+
+# Course/report exports should stay outside the product repo
+04_code/05_product_demo/frontend/generated/moodtips-report/
+04_code/05_product_demo/frontend/generated/moodtips-showcase/

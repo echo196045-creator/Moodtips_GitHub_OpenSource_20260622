@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoodSips Ops Console | 标签治理后台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="ambient ambient-c"></div>
+
+    <div class="app-shell">
+      <header class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">MoodSips Ops Console</p>
+          <h1>标签治理与菜单运营台</h1>
+          <p class="subtitle">
+            从推荐系统的后台视角查看品牌覆盖、标签结构、客制化深度与待校对项，让 MoodSips
+            不只是一个会推荐的前台页面，而是一套有主数据治理能力的信息系统。
+          </p>
+          <div class="hero-links">
+            <span id="opsApiStatus" class="status-pill status-pending">正在检查本地 API</span>
+            <span id="opsImportStatus" class="status-pill status-pending">等待读取治理摘要</span>
+            <a class="ghost-link" href="./index.html">返回用户端 Demo</a>
+            <a class="ghost-link" href="http://127.0.0.1:8000/docs" target="_blank" rel="noreferrer">打开接口文档</a>
+          </div>
+          <div class="hint-banner">
+            当前运营台默认以中国大陆市场和人民币口径运行。前台消费者视图只接受“大陆官方渠道”真实来源，并统一以深圳门店价格作为正式接入口径；在中国门店、中国价格和中国客制化数据接入完成前，实验性来源仅保留在内部治理与技术验证范围。
+          </div>
+        </div>
+
+        <div class="hero-metrics">
+          <article class="metric-card">
+            <span>当前范围</span>
+            <strong id="opsMetricScope">全部</strong>
+            <small>品牌治理范围</small>
+          </article>
+          <article class="metric-card">
+            <span>活跃饮品</span>
+            <strong id="opsMetricItems">--</strong>
+            <small>可推荐主数据</small>
+          </article>
+          <article class="metric-card">
+            <span>均价</span>
+            <strong id="opsMetricAvgPrice">--</strong>
+            <small>基础价格均值</small>
+          </article>
+          <article class="metric-card">
+            <span>待复核</span>
+            <strong id="opsMetricReview">--</strong>
+            <small>优先审校样本</small>
+          </article>
+        </div>
+      </header>
+
+      <div class="workspace-grid ops-workspace">
+        <aside class="panel control-panel">
+          <section class="section-card feature-card">
+            <div class="section-head">
+              <div>
+                <h2>治理筛选</h2>
+                <span>按品牌切换后台视角</span>
+              </div>
+            </div>
+            <div id="opsBrandRail" class="chip-row rail"></div>
+          </section>
+
+          <section class="section-card feature-card">
+            <div class="section-head">
+              <div>
+                <h2>覆盖率快照</h2>
+                <span>查看主数据完整度</span>
+              </div>
+            </div>
+            <div id="opsCoverageGrid" class="ops-coverage-grid"></div>
+            <div class="hint-banner">
+              这组指标用于回答一个很关键的问题：菜单主数据导入之后，哪些商品已经足够支持推荐，哪些商品还需要人工修订标签或补齐结构。
+            </div>
+          </section>
+
+          <section class="section-card feature-card">
+            <div class="section-head">
+              <div>
+                <h2>品牌矩阵</h2>
+                <span>品牌覆盖、价格带和导入新鲜度</span>
+              </div>
+            </div>
+            <div id="opsBrandMatrix" class="ops-brand-grid"></div>
+          </section>
+
+          <section class="section-card feature-card">
+            <div class="section-head">
+              <div>
+                <h2>结构分布</h2>
+                <span>品类、价格带和客制化类型</span>
+              </div>
+            </div>
+            <div class="stack-block">
+              <div>
+                <p class="field-label">品类分布</p>
+                <div id="opsCategoryList" class="ops-bar-list"></div>
+              </div>
+              <div>
+                <p class="field-label">价格带分布</p>
+                <div id="opsPriceBandList" class="ops-bar-list"></div>
+              </div>
+              <div>
+                <p class="field-label">客制化类型</p>
+                <div id="opsOptionGroupList" class="ops-bar-list"></div>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <main class="panel result-panel">
+          <section class="split-grid">
+            <section class="section-card feature-card compact-card">
+              <div class="section-head">
+                <div>
+                  <h2>标签热区</h2>
+                  <span>看系统当前如何理解饮品画像</span>
+                </div>
+              </div>
+              <div class="stack-block">
+                <div>
+                  <p class="field-label">画像标签</p>
+                  <div id="opsProfileTags" class="chip-row"></div>
+                </div>
+                <div>
+                  <p class="field-label">情绪标签</p>
+                  <div id="opsMoodTags" class="chip-row"></div>
+                </div>
+                <div>
+                  <p class="field-label">场景标签</p>
+                  <div id="opsSceneTags" class="chip-row"></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section-card feature-card compact-card">
+              <div class="section-head">
+                <div>
+                  <h2>特征均值</h2>
+                  <span>用来校验整体画像是否偏移</span>
+                </div>
+              </div>
+              <div id="opsFeatureAverageList" class="feature-list"></div>
+            </section>
+          </section>
+
+          <section class="split-grid ops-review-grid">
+            <section class="section-card feature-card compact-card">
+              <div class="section-head">
+                <div>
+                  <h2>待复核队列</h2>
+                  <span id="opsReviewStatus">等待读取治理摘要</span>
+                </div>
+              </div>
+              <div id="opsReviewQueue" class="ops-review-list"></div>
+            </section>
+
+            <section class="section-card feature-card compact-card">
+              <div class="section-head">
+                <div>
+                  <h2>商品审校详情</h2>
+                  <span id="opsDetailStatus">等待选中样本</span>
+                </div>
+              </div>
+              <div id="opsDetailCard" class="detail-card empty-detail">
+                选择一条待复核样本后，这里会显示商品画像、标签、价格和客制化结构，方便继续人工校对。
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="./ops.js"></script>
+  </body>
+</html>

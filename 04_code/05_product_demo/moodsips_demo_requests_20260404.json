@@ -1,0 +1,79 @@
+{
+  "focus_foggy_commute": {
+    "entry_mode": "mood",
+    "goal": "focus",
+    "mood": "foggy",
+    "scene": "commute",
+    "budget_band": "mid",
+    "temperature_pref": "cold",
+    "caffeine_pref": "allow",
+    "dairy_avoid": false,
+    "micro_adjusts": [],
+    "profile": {
+      "sweet_pref": 1,
+      "caffeine_pref_level": 4,
+      "usual_temp": "cold",
+      "liked_categories": ["tea", "fruit_tea", "coffee"],
+      "disliked_categories": ["smoothie"]
+    },
+    "top_k": 3
+  },
+  "relax_need_care_rainy": {
+    "entry_mode": "mood",
+    "goal": "relax",
+    "mood": "need_care",
+    "scene": "rainy_day",
+    "budget_band": "mid",
+    "temperature_pref": "hot",
+    "caffeine_pref": "avoid",
+    "dairy_avoid": false,
+    "micro_adjusts": [],
+    "profile": {
+      "sweet_pref": 2,
+      "caffeine_pref_level": 0,
+      "usual_temp": "hot",
+      "liked_categories": ["latte", "herbal_tea", "milk_tea"],
+      "disliked_categories": ["coffee", "tea_sparkling"]
+    },
+    "top_k": 3
+  },
+  "refresh_stressed_hot_weather": {
+    "entry_mode": "mood",
+    "goal": "refresh",
+    "mood": "stressed",
+    "scene": "hot_weather",
+    "budget_band": "mid",
+    "temperature_pref": "cold",
+    "caffeine_pref": "allow",
+    "dairy_avoid": false,
+    "micro_adjusts": ["less_sweet"],
+    "profile": {
+      "sweet_pref": 1,
+      "caffeine_pref_level": 2,
+      "usual_temp": "cold",
+      "liked_categories": ["fruit_tea", "tea", "tea_sparkling"],
+      "disliked_categories": ["smoothie", "milk_drink"]
+    },
+    "top_k": 3
+  },
+  "reward_empty_weekend": {
+    "entry_mode": "mood",
+    "goal": "reward",
+    "mood": "empty",
+    "scene": "social",
+    "budget_band": "high",
+    "temperature_pref": "any",
+    "caffeine_pref": "allow",
+    "dairy_avoid": false,
+    "micro_adjusts": [],
+    "profile": {
+      "sweet_pref": 3,
+      "caffeine_pref_level": 1,
+      "usual_temp": "cold",
+      "liked_categories": ["fruit_tea", "milk_tea", "yogurt"],
+      "disliked_categories": ["tea"]
+    },
+    "top_k": 3
+  }
+}
+
