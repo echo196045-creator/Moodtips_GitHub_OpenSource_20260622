@@ -1,8 +1,10 @@
 # 参与共创 Moodtips
 
-感谢你愿意一起维护 Moodtips。这个项目已经部署并开放使用：
+感谢你愿意一起维护 Moodtips。这个项目已经部署并正式开放使用：
 
 [https://moodtips.oppenchow.online/app/](https://moodtips.oppenchow.online/app/)
+
+如果只是日常使用，不需要本地部署，直接访问线上网站即可。本仓库开源主要用于学习交流、技术复现和二次开发。
 
 我们欢迎大家补充缺失的饮品图片、新饮品、季节限定 SKU，以及协助校对品牌、价格、口味标签和图片来源。
 

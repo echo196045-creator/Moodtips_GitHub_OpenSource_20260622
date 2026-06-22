@@ -35,7 +35,7 @@ Initial open-source release
 4. Description 可填写：
 
 ```text
-Add Moodtips FastAPI app, SQLite demo database, frontend assets, and local run guide.
+Add Moodtips FastAPI app, SQLite database, frontend assets, and local run guide.
 ```
 
 5. 点击 `Commit to main`。
@@ -68,7 +68,7 @@ https://moodtips.oppenchow.online/app/
 Description 可填写：
 
 ```text
-Mood-based drink recommendation system built with FastAPI, SQLite, and a lightweight web frontend.
+Mood-based drink recommendation system. Use the live website directly; source code is open for learning and collaboration.
 ```
 
 ## 7. 同学下载后如何运行
